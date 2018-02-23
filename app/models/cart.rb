@@ -14,6 +14,7 @@ class Cart < ActiveRecord::Base
   def add_item(item_id)
     line_item = self.line_items.find_by(item_id: item_id)
     if line_item
+      # binding.pry
       line_item.quantity += 1
       line_item.save
     else

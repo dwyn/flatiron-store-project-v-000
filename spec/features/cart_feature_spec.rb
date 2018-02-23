@@ -139,7 +139,6 @@ describe 'Feature Test: Cart', :type => :feature do
       end
 
       it "Updates quantity when selecting the same item twice" do
-        binding.pry
         first_item = Item.first
         2.times do 
           visit store_path
@@ -148,6 +147,7 @@ describe 'Feature Test: Cart', :type => :feature do
           end
         end
         @user.reload
+        # binding.pry
         expect(@user.current_cart.items.count).to eq(1)
         expect(@user.current_cart.line_items.count).to eq(1)
         expect(@user.current_cart.line_items.first.quantity).to eq(2)
