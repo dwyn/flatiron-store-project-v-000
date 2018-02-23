@@ -3,5 +3,13 @@
 <ul>
 <% @category.items.each do |item| %>
     <li><%= link_to item.title, item_path(item) %></li>
+    <li>$<%= item.price.to_f/100 %></li>
+
+    <% if signed_in? %>
+      <%= form_tag '/line_items/#{item.id}' do %>
+        <%= submit_tag "Add to Cart" %>
+      <% end %>
+    <% end %>
+
 <% end %>
 </ul>

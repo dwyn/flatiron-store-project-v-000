@@ -1,3 +1,5 @@
+User.create(email: "dwayne@gmail.com", password: "password123")
+
 10.times do 
   Item.create(
     title: Faker::Commerce.product_name, 
@@ -13,5 +15,3 @@ Item.all.each do |item|
   item.save
   counter += 1
 end
-
-User.create(email: "dwayne@gmail.com", password: "password123")

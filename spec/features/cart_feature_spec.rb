@@ -139,6 +139,7 @@ describe 'Feature Test: Cart', :type => :feature do
       end
 
       it "Updates quantity when selecting the same item twice" do
+        binding.pry
         first_item = Item.first
         2.times do 
           visit store_path
